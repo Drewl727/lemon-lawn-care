@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@theme {
+  /* Typography */
+  --font-display: var(--font-syne), 'Syne', sans-serif;
+  --font-body: var(--font-outfit), 'Outfit', sans-serif;
+
+  /* Color palette — OKLCH for perceptual consistency */
+  --color-cream: oklch(97.5% 0.008 102);
+  --color-cream-dark: oklch(93% 0.014 100);
+  --color-forest: oklch(22% 0.08 152);
+  --color-forest-mid: oklch(38% 0.16 148);
+  --color-forest-light: oklch(60% 0.13 146);
+  --color-forest-faint: oklch(94% 0.025 148);
+  --color-lemon: oklch(87% 0.16 93);
+  --color-lemon-dark: oklch(75% 0.17 90);
+  --color-ink: oklch(16% 0.014 110);
+  --color-ink-muted: oklch(44% 0.016 110);
+  --color-border: oklch(87% 0.013 108);
+  --color-border-strong: oklch(78% 0.018 108);
+  --color-white-tinted: oklch(99% 0.004 102);
+
+  /* Spacing extras */
+  --spacing-section: 6rem;
+}
+
+/* Base reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+/* Keyframe animations */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes slide-right {
+  from { opacity: 0; transform: translateX(-20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s cubic-bezier(0.21, 0.5, 0.38, 1) both;
+}
+.animate-fade-in {
+  animation: fade-in 0.6s ease both;
+}
+.animate-slide-right {
+  animation: slide-right 0.6s cubic-bezier(0.21, 0.5, 0.38, 1) both;
+}
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+.delay-700 { animation-delay: 0.7s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .animate-fade-in,
+  .animate-slide-right {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Utility: constrained prose width */
+.prose-constrained {
+  max-width: 68ch;
+}
+
+/* Form field focus ring */
+.field-ring:focus {
+  outline: 2px solid oklch(38% 0.16 148);
+  outline-offset: 2px;
+}
