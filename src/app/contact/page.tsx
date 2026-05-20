@@ -132,7 +132,7 @@ export default function ContactPage() {
                     reliable lawn care.
                   </p>
                   <a
-                    href="https://g.page/r/review"
+                    href="https://share.google/jW0ulZfnOUAn6y2Ns"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 text-forest-mid font-display font-700 text-sm hover:text-forest transition-colors duration-200 cursor-pointer"
